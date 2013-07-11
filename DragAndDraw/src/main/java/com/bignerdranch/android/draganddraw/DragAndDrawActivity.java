@@ -2,22 +2,13 @@ package com.bignerdranch.android.draganddraw;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.v4.app.Fragment;
 import android.view.Menu;
 
-public class DragAndDrawActivity extends Activity {
+public class DragAndDrawActivity extends SingleFragmentActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_drag_and_draw);
+    protected Fragment createFragment() {
+        return new DragAndDrawFragment();
     }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.drag_and_draw, menu);
-        return true;
-    }
-    
 }
