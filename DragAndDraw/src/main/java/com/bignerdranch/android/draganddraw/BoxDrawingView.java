@@ -46,10 +46,10 @@ public class BoxDrawingView extends View {
         canvas.drawPaint(mBackgroundPaint);
 
         for (Box box : mBoxes) {
-            float left = Math.min(box.getOrigin().x, box.getOrigin().x);
-            float right = Math.max(box.getOrigin().x, box.getOrigin().x);
-            float top = Math.min(box.getOrigin().y, box.getOrigin().y);
-            float bottom = Math.max(box.getOrigin().y, box.getOrigin().y);
+            float left = Math.min(box.getOrigin().x, box.getCurrent().x);
+            float right = Math.max(box.getOrigin().x, box.getCurrent().x);
+            float top = Math.min(box.getOrigin().y, box.getCurrent().y);
+            float bottom = Math.max(box.getOrigin().y, box.getCurrent().y);
 
             canvas.drawRect(left, top, right, bottom, mBoxPaint);
         }
